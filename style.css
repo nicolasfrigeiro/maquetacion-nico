@@ -1,0 +1,287 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Lato", serif;
+    list-style: none;
+    text-decoration: none;
+    color: black;
+    }
+    
+    
+    header{
+    position: fixed; HEADER /*FIJO EN LA PARTE SUPERIOR */
+    right: 0;
+    top: 0;
+    z-index: 100;  /*esto hace que el header se muestre por encima */
+    width: 100%;
+    display: flex;  /* esto hara que los elementos se pongan en linea*/ 
+    align-items: center; 
+    justify-content: space-between;
+    padding: 15px 3%;
+background-color: transparent;
+
+    }
+
+    .logo {
+font-size: 30px; 
+font-weight: 800px; /* grueso de las letras */
+
+    }
+
+    .NAVLIST {
+display: flex; /*sirve para que la lista de ul se pongan en linea */
+    }
+
+
+    .NAVLIST a { 
+margin-left: 60px; /* para separar las palabras de la navlist*/
+font-size: 15px;
+ font-weight: 600px;
+border-bottom: 2px solid transparent; /*subrallado trasnparente */ 
+transition: all .5s ease; /*para animar todas las caracteristicas del navlist */
+
+    }
+
+.NAVLIST a:hover {
+    border-bottom: 2px solid red; /*subrallado trasnparente */ 
+}
+    
+#menu-icon{
+    display: none; queda en none para que solol se vea cuando la pagina este colapsada
+}
+
+    #menu-icon{
+color: red;
+font-size: 35px;
+z-index: 101px; /*para que este sobre el header*/
+cursor: pointer; /* manito de mouse arriba */
+
+
+
+}
+
+#menu-todo{
+    display: none; /*nunca quiero que se vea el checkbox*/
+}
+.menuicono-action{
+    display: none; /* para qe no se le pueda hacer click*/
+}
+
+.hero{
+height: 100%;
+width: 100%;
+min-height: 100vh; /*para que ocupe todo el alto disponible */
+background: linear-gradient(245.59deg, white 0%, red 50%, white 100% ); /*fondo de color */
+position: relative; /*contenedor relativo nos permite usar bottom left  top */
+display: grid; /*para que el hero se pueda dividir en dos colummnas*/
+grid-template-columns: 1fr 1fr ; /* las dos columnas */
+align-items: center; /* para alinear verticalmente el hero*/
+gap: 2rem; /* espacio de 2 rem entre las dos columnas */
+}
+
+.hero{
+    padding: 0% 8%;
+}
+.hero-text h5{
+font-size: 14px;
+font-weight: 400px;
+margin-bottom: 25px;
+} 
+.hero-text h1{
+font-family: "Bebas Neue", serif;
+font-size: 50px;
+line-height: 1;
+margin: 0 0 30px;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600px;
+    margin-top: 10px;
+}
+
+.hero-text p {
+    font-size: 80%;
+    margin-bottom: 40px;
+    line-height: 1.9;
+}
+.hero-img img{
+    width: 400px;
+    margin: 10% 0 0 10%;
+    height: auto;
+    transition: all 5s linear;
+}
+.hero-img img:hover{
+width: 450px;
+opacity: 0.6;
+}
+.hero-text a {
+    display: inline-block;
+    background-color: red;
+    border: 1px solid transparent;
+    padding: 15px; 
+line-height: 1.4;
+font-size: 14px;
+font-weight: 500px;
+border-radius: 30px;
+text-transform: uppercase;
+transition: all 2s ease;
+
+}
+
+.hero-text a:hover {
+background-color: transparent;
+border: 1px solid white;
+transform: translateX(8px);
+}
+.hero-text a.videos{
+background-color: transparent;
+border: 1px solid white;
+margin-left: 20px ;
+}
+.hero-text a.videos i{
+    vertical-align: middle;
+margin-right: 5px;
+}
+
+
+
+.icons{
+position: absolute;
+top: 50vh;
+padding: 0 3%;
+transform: translateY(-50%);
+
+}
+
+.icons i{
+display: block;
+margin: 26px 0 ;
+font-size: 24px;
+transition: all 0.5s ease;
+}
+ .icons i:hover{
+color: darkred;
+transform: translateY(-5px);
+
+ }
+.scroll{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+.scroll i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: brown;
+    border-radius: 30px;
+    transition:all .5s ease ;
+
+}
+.scroll i:hover{
+transform: translateY(-5px);
+}
+/*para que la web sea responsitive cel o tabble */
+@media (max-width: 992px)
+{
+    ::selection{
+        padding: 0 3%;
+transition: .2s;
+  }
+
+  .hero-text{
+    padding-top: 0;
+  }
+  .hero-img{
+    text-align: center;
+  }
+
+.hero-img img{
+    width: 80%;
+    margin: 10% 0 0 10%;    
+}
+.hero-text p {
+    font-size: 70%;
+}
+.scroll{
+    display: none;
+}
+
+.icons{
+    display: none;
+}
+}
+
+@media (max-width: 768px){
+
+.menuicono-action{
+    display: block;
+}
+#menu-icon{
+    display: block;
+}
+.hero-text{
+    text-align: center;
+    padding-top: 100px;
+}
+.hero-img img{
+    margin: 0;
+}
+
+.hero{
+    height: 100%;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+     
+}
+.NAVLIST{
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    width: 200px;
+    height: 180px;
+    background-color: rgba(235, 27, 27, 0.899);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 20px;
+transition: all .5s ease-out;
+}
+.NAVLIST a{
+display: block;
+margin: 10px 0;
+}
+
+#menu-todo:checked + label.menuicono-action + ul  {
+    right: 0;
+
+}
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
